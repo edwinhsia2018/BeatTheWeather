@@ -11,7 +11,6 @@ $("#submitW").on("click", function(event){
     .then(function(response){
         console.log(queryURL)
         console.log(response)
-        $("#temp").text(response.main.temp);
-        $("#weath").text(response.weather.main);        
+        $("#temp").text(response.main.temp);   
     })
 })
