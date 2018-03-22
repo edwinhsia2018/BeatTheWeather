@@ -1,41 +1,15 @@
-function getWeather(){
-    var queryURL = "weather url" + currentWeather + "";
+$("#submitW").on("click", function(event){
+    event.preventDefault();
+    console.log("zipCodeForm")
+    var apiKey = "d23506797d07737660408148e7533f22"
+    var zip = $("#zipCodeForm").val();
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?zip="+zip+",us&appid="+ apiKey;
+    
     $.ajax({
         url: queryURL,
         method: "GET"
-      })
+    })
     .then(function(response){
-        var currentWeather = response.data.currentWeather;
-        $("#weather").append(response.currentWeather);
+        console.log(queryURL)          
     })
-}
-
-if (currentWeather = sunny && temperature > 60) {
-    var suggestedFood = "icecream"
-}
-else if (currentWeather = rainy) {
-
-}
-else if (currentWeather = snowing) {
-
-}
-else if (currentWeather = windy) {
-
-}
-
-
-function displayFood() {
-    var queryURL = "https://api.yelp.com/v3/businesses/search?q=" + suggestedFood""
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-      })
-      .then(function(response){
-        var results = response.data;
-        for (var i=0; i<results.length; i++) {
-            var foodImage = $("<img>");
-            foodImage.attr("src", results[i].image_url);
-            foodImage.attr("class", "food-image");
-        }
-    })
-}
+})
