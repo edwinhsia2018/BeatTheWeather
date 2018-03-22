@@ -7,5 +7,6 @@ $(document).on("click", "#zipcode-submit", function (){
     else {
         alert('Invalid ZipCode');
     }
-}
+  }
+  $("#")
 });
