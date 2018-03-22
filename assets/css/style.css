@@ -51,19 +51,21 @@ body, html {
   border: 2px solid black;
   background: rgba(243, 118, 118, 0.493);
   margin: auto; 
-  padding: 30px;
+  padding: 44px;
 }
 
-
+#titleText {
+  font: bold;
+}
 
 .card-header {
-  background: gainsboro;
+  background: rgba(173, 57, 57, 0.904);
 }
 
 #restaurantResults {
-  background: rgba(220, 220, 220, 0.719);
+  background: rgba(222, 224, 233, 0.719);
 }
 
 #selectCard {
-  background: rgba(255, 255, 255, 0.493);
+  background: rgba(243, 118, 118, 0.493);
 }
