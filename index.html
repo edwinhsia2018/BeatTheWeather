@@ -16,7 +16,7 @@
 
 <body>
 
-    <div class="bg">
+    <div class="bg" id="weather-background">
 
 <div id="main-container" class="container">
 
@@ -30,11 +30,11 @@
 
     <div class="col-md-12">
 
-    <div id="header">
-      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-          <h1>Beat The Weather</h1>
-        </nav>
-    </div>
+      <div class="jumbotron jumbotron-fluid" id="jjjumbotron1">
+        <div class="container">
+          <h1 class="display-4">Beat The Weather</h1>
+        </div>
+      </div>
 
   </div>
 
@@ -46,36 +46,49 @@
 
   <div class="row">
 
-      <div class="col-md-12">
- 
-    <nav class="navbar navbar-light bg-light justify-content-between">
-        <a class="navbar-brand">What's the weather?</a>
-        <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="ZIP Code" aria-label="Search" id="zipCodeForm">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
-        </form>
-      </nav>
+      <div class="col-md-6">
+
+          <div class="jumbotron jumbotron-fluid" id="jjjumbotron2">
+              <div class="container">
+                  <h2>What's Your Zip Code?</h2>
+                  <form class="form-inline">
+                      <input class="form-control mr-sm-2" type="search" placeholder="ZIP Code" aria-label="Search" id="zipCodeForm">
+                      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" id="ZIPbutton">Search</button>
+                    </form>
+              </div>
+            </div>
 
       </div>
 
-  </div>
+            <div class="col-md-6">
+
+                <div class="jumbotron jumbotron-fluid" id="jjjumbotron3">
+                    <div class="container">
+                      <h2 class="display-4">Today is: Sunny</h2>
+                    </div>
+                  </div>
+              
+                </div>
+
+      </div>
+
+  
 
   <br>
 
-  <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Today is: Sunny</h1>
-      </div>
-    </div>
+
 
     <br>
 
+  <div class="row">
 
-    <div class="card">
+    <div class="col-md-12">
+
+    <div class="card" id="selectCard">
         <div class="card-header">
           Restaurant Selections:
         </div>
-        <div class="card-body">
+        <div class="card-body" id="restaurantResults">
           <blockquote class="blockquote mb-0">
             <p>EXAMPLE TEXT 1</p>
             <p>EXAMPLE TEXT 2</p>
@@ -84,7 +97,9 @@
         </div>
       </div>
 
+    </div>
 
+    </div>
 
 </div>
 
