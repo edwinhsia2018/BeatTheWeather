@@ -32,7 +32,7 @@ function getWeather(){
 
 
 function displayFood() {
-    var queryURL = "https://api.yelp.com/v3/businesses/search?q=" + suggestedFood""
+    var queryURL = "https://api.yelp.com/v3/businesses/search?q=" + suggestedFood;
     $.ajax({
         url: queryURL,
         method: "GET"
