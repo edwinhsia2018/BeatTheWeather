@@ -67,3 +67,15 @@ body, html {
 #selectCard {
   background: rgba(243, 118, 118, 0.493);
 }
+
+#city{
+  font-size: 30px;
+}
+
+#wIcon{
+  position: relative;
+  width: 25px;
+  height: 25px;
+  padding-left: 10%;
+  
+}
