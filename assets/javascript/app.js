@@ -1,4 +1,4 @@
-$("#submitW").on("click", function(event){
+$("#ZIPbutton").on("click", function(event){
     event.preventDefault();
     var apiKey = "d23506797d07737660408148e7533f22"
     var zip = $("#zipCodeForm").val();
@@ -11,7 +11,10 @@ $("#submitW").on("click", function(event){
     .then(function(response){
         console.log(queryURL)
         console.log(response)
-        $(".display-4").text(response.main.temp);        
+        $("#city").text(response.name); 
+        $("#temp").text(Math.round(response.main.temp * (9/5) - 459.67)+ "°F");
+        $("#sky").text(response.weather[0].main);
+    
     })
 })
 
