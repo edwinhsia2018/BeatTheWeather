@@ -9,15 +9,17 @@ body, html {
 }
 
 #whatWeather {
-  background: rgba(243, 118, 118, 0.493);
+  background: rgba(245, 162, 19, 0.756);
 }
 
 
 .bg { 
   /* The image used */
-  background-image: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(20).jpg");
+  background-image: url("../images/travelbg3.jpg");
+
   /* Full height */
-  height: 100%; 
+  height: auto;
+
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
@@ -32,44 +34,42 @@ body, html {
   float: right;
 }
 
-#jjjumbotron1 {
+/* #jjjumbotron1 {
   border: 2px solid black;
-  background: rgba(243, 118, 118, 0.493);
+  background: rgba(26, 132, 171);
   margin-top: 30px;
   margin-bottom: 10px;
   padding: 40px;
 
-}
+} */
 
 #jjjumbotron2 {
-  border: 2px solid black;
-  background: rgba(243, 118, 118, 0.493);
+  border: 2px solid rgb(255, 255, 255);
+  background: rgba(245, 162, 19, 0.756);
   margin: auto; 
   padding: 26px;
 }
 
 
 #jjjumbotron3 {
-  border: 2px solid black;
-  background: rgba(243, 118, 118, 0.493);
+  border: 2px solid rgb(255, 255, 255);
+  background: rgba(245, 162, 19, 0.756);
   margin: auto; 
   padding: 44px;
 }
 
-
-
 .card-header {
-  background: rgba(173, 57, 57, 0.904);
+  background: rgba(245, 162, 19, 0.756);
 }
 
 #restaurantResults {
-  background: rgba(222, 224, 233, 0.719);
+  background: rgba(222, 224, 233);
   width: 100%;
   height: 500px;
 }
 
 #selectCard {
-  background: rgba(243, 118, 118, 0.493);
+  background: rgba(245, 162, 19, 0.756);
 }
 
 #city{
@@ -82,4 +82,8 @@ body, html {
   height: 25px;
   padding-left: 10%;
   
+}
+#events-header {
+  background: rgba(245, 162, 19, 0.756);
+  color: white;
 }
