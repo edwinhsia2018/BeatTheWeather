@@ -24,37 +24,43 @@ function getWeather(){
         if(weatherImage >= 200 && weatherImage < 300){
             $("#wIcon").empty();
             $("#wIcon").append('<img id="wImg" src="https://openweathermap.org/img/w/11d.png" />');
-            $("#jjjumbotron3").css("background-image", 'url("http://kb4images.com/images/rain-images/38093866-rain-images.jpg")');
+            $("#jjjumbotron3").css("background-image", 'url("../BeatTheWeather/assets/images/rain.jpg")');
+            $("#jjjumbotron3").css("height: auto");
             //thunder
         }
         else if(weatherImage >= 300 && weatherImage < 600){
             $("#wIcon").empty();
             $("#wIcon").append('<img id="wImg" src="https://openweathermap.org/img/w/09d.png" />');
-            $("#jjjumbotron3").css("background-image", 'url("http://kb4images.com/images/rain-images/38093866-rain-images.jpg")');
+            $("#jjjumbotron3").css("background-image", 'url("../BeatTheWeather/assets/images/rain.jpg")');
+            $("#jjjumbotron3").css("height: auto");
             //rain
         }
         else if(weatherImage >= 600 && weatherImage < 700){
             $("#wIcon").empty();
             $("#wIcon").append('<img id="wImg" src="https://openweathermap.org/img/w/13d.png" />');
-            $("#jjjumbotron3").css("background-image", 'url("https://wallpaperscraft.com/image/trees_winter_blizzard_wind_snow_14899_3840x2160.jpg")');
+            $("#jjjumbotron3").css("background-image", 'url("../BeatTheWeather/assets/images/snowing.jpg")');
+            $("#jjjumbotron3").css("height: auto");
             //snow
         }
         else if(weatherImage >= 700 && weatherImage < 800){
             $("#wIcon").empty();
             $("#wIcon").append('<img id="wImg" src="https://openweathermap.org/img/w/50d.png" />');
-            $("#jjjumbotron3").css("background-image", 'url("https://www.thesun.co.uk/wp-content/uploads/2016/12/nintchdbpict000287123874.jpg?strip=all&quality=100&w=1200&h=800&crop=1")');
+            $("#jjjumbotron3").css("background-image", 'url("../BeatTheWeather/assets/images/foggy.jpg")');
+            $("#jjjumbotron3").css("height: auto");
             //mist
         }
         else if(weatherImage == 800){
             $("#wIcon").empty();
             $("#wIcon").append('<img id="wImg" src="https://openweathermap.org/img/w/01d.png" />');
-            $("#jjjumbotron3").css("background-image", 'url("https://i.pinimg.com/originals/92/39/54/92395443ed69dbdd163988ae680874df.jpg")');
+            $("#jjjumbotron3").css("background-image", 'url("../BeatTheWeather/assets/images/sunny.jpg")');
+            $("#jjjumbotron3").css("height: auto");
             //sunny/clear
         }
         else if(weatherImage >= 800 && weatherImage < 805){
             $("#wIcon").empty();
             $("#wIcon").append('<img id="wImg" src="https://openweathermap.org/img/w/03d.png" />');
-            $("#jjjumbotron3").css("background-image", 'url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/PH7HLeq/extreme-weather-and-strong-winds-palm-tree-moves-in-the-wind_4xntjgsfe__F0000.png")');
+            $("#jjjumbotron3").css("background-image", 'url("../BeatTheWeather/assets/images/cloudy.png")');
+            $("#jjjumbotron3").css("height: auto");
             //cloudy
         }
     })
