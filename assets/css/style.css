@@ -47,6 +47,15 @@ body, html {
   background: rgba(245, 162, 19, 0.756);
   margin: auto; 
   padding: 44px;
+  background-image: url("../images/weatherfiller2.jpg");
+
+  /* Full height */
+  height: auto;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .card-header {
