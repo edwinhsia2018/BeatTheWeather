@@ -57,34 +57,28 @@ function displayEvents() {
 
        var p = $("<p>").text(results[i].venue.name);
 
-       eventDiv.append(p);
-       
+       var f = $("<p>").text(results[i].venue.location.address);
 
+       var d = $("<p>").text("Rating: " + results[i].venue.rating);
+
+       var u = $("<p>").text("Website: " + results[i].venue.url);
+
+       var i = $("<img>");
+       i.attr("src", results[i].venue.id);
+
+
+       eventDiv.append(p);
+       eventDiv.append(f);
+       eventDiv.append(d);
+       eventDiv.append(u);
 
 
        $("#restaurantResults").prepend(eventDiv);
+
     }
 
 })
-
-    // DELETES PREVIOUS RESULTS SO WE DON'T CONTINUE TO REPEAT SUGGESTIONS
-    // $("#restaurantResults").empty();
-
-    // LOOP THROUGH OUR ZIP CODE ARRAY ---
-    // THIS MAY NOT BE THE MOST EFFICENT WAY OF DOING THIS...
-    for (var i = 0; i < zipCode.length; i++) {
-
-        // GENERATE RESTAURANT RESULTS
-        var a = $("<div>");
-
-        // ADDS CLASS OF RESTAURANT
-        a.addClass("restaurant");
-        // ADDS A DATA ATTRIBUTE
-        a.attr("data-name", zipCode[i]);
-        // ADDS RESTAURANT NAME
-        
-
-    }
+$("#restaurantResults").empty();
 
 }
 
