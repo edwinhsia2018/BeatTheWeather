@@ -63,9 +63,6 @@ function displayEvents() {
 
        var u = $("<p>").text("Website: " + results[i].venue.url);
 
-       var i = $("<img>");
-       i.attr("src", results[i].venue.id);
-
 
        eventDiv.append(p);
        eventDiv.append(f);
