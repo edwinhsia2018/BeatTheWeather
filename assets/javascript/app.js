@@ -2,7 +2,6 @@ $("#ZIPbutton").on("click", function(event){
     event.preventDefault();
 
     getWeather();
-
 })
 
 function getWeather(){
@@ -54,4 +53,3 @@ function getWeather(){
         }
     })
 }
-
