@@ -3,102 +3,85 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Beat The Weather</title>
+  <title>Travel Buddy</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
-  <script src="assets/javascript/BENJS.js"></script>
+  <script src="assets/javascript/BenJS.js"></script>
+  <script src="assets/javascript/app.js"></script>
 </head>
 
 <body>
 
-    <div class="bg" id="weather-background">
 
-<div id="main-container" class="container">
 
 <!-- BG CONTIAINER -->
 
-
-
 <!-- HEADER ROW -->
 
+<div class="jumbotron jumbotron-fluid bg">
+    <div class="container-full-bg">
+      <h1 class="display-3 text-white"><strong>Travel Buddy V.1</strong></h1>
+      <p class="lead"></p>
+    </div>
+  </div>
+
+  <br>
+  <!-- SEARCH BAR ROW -->
+  <div id="weather-background">
+
+  <div id="main-container" class="container">
   <div class="row">
 
-    <div class="col-md-12">
-
-      <div class="jumbotron jumbotron-fluid" id="jjjumbotron1">
+    <div class="col-md-6">
+      <div class="jumbotron jumbotron-fluid" id="jjjumbotron2">
         <div class="container">
-          <h1 class="display-4"><strong>Beat The Weather V.1</strong></h1>
+          <h2 class="display-6 text-white">Where Are You?</h2>
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="ZIP Code" aria-label="Search" id="zipCodeForm">
+              <button class="btn btn-info my-2 my-sm-0" type="submit" id="ZIPbutton">Search</button>
+            </form>
         </div>
       </div>
-
-  </div>
-
-  </div>
-
-  <br>
-
-  <!-- SEARCH BAR ROW -->
-
-  <div class="row">
+    </div>
 
       <div class="col-md-6">
-
-          <div class="jumbotron jumbotron-fluid" id="jjjumbotron2">
-              <div class="container">
-                  <h2 class="display-4">Where Are You?</h2>                  <form class="form-inline">
-                      <input class="form-control mr-sm-2" type="search" placeholder="ZIP Code" aria-label="Search" id="zipCodeForm">
-                      <button class="btn btn-danger my-2 my-sm-0" type="submit" id="ZIPbutton">Search</button>
-                    </form>
-              </div>
-            </div>
-
+          <div class="jumbotron jumbotron-fluid text-white" id="jjjumbotron3">
+              <div id="city"></div>
+              <div id="temp"></div>
+              <div id="sky"></div>
+              <div id="wIcon"></div>
+    
+          </div>
       </div>
 
-            <div class="col-md-6">
-
-                <div class="jumbotron jumbotron-fluid" id="jjjumbotron3">
-                    <div class="container">
-                      <h2 class="display-4">Today is: Sunny</h2>
-                    </div>
-                  </div>
-              
-                </div>
-
-      </div>
-
+  </div>
   
-
   <br>
-
-
-
-    <br>
+  <br>
 
   <div class="row">
 
     <div class="col-md-12">
-
-    <div class="card" id="selectCard">
-        <div class="card-header">
-          Restaurant Selections:
+      <div class="card" id="selectCard">
+        <div class="card-header" id="events-header">
+          <h2>Events and Eats:</h2>
         </div>
         <div class="card-body" id="restaurantResults">
           
         </div>
       </div>
-
     </div>
-
-    </div>
+    
+  </div>
 
 </div>
-
 </div>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXRr8inpLDEwjG7TVMWEXbCEnOFYPmiyw&callback=initMap" type="text/javascript"></script>
+<script src="assets/javascript/app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
