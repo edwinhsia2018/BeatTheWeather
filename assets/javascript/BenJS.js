@@ -27,44 +27,39 @@ function displayEvents() {
 
     var userZipCode = $("#zipCodeForm").val();
 
-    var queryUrl = "https://api.seatgeek.com/2/events?postal_code=" + userZipCode + "&client_id=MTA5NjY3OTR8MTUyMTgxNzkwOS40"
+    var settings = {
+        "async": true,
+        //"crossDomain": true,
+        "url": "https://api.foursquare.com/v2/venues/explore?near=" + userZipCode + "&oauth_token=OL4R3QGEZHZP0NH4ZA2RZCS034DK2JZIFICQ2WGGLBFTSQXZ&v=20180323&radius=20000&section=food&limit=5&categories=",
+        "method": "GET",
+        'dataType':"jsonp",
+        "headers": {
+          "client_id": "EUGHXW14BPUZUQRJR3IOTP4GJY2DS0HMZNWHQRFTCKA0WGPW",
+          "client_secret": "LCWCNJILWY0WXHSS3K2GI4T5VVPJ5MZ0XRMEDD0SXOKTZFK0",
+          "Cache-Control": "no-cache",
+         // "Postman-Token": "b2ca49c0-2e66-4580-9624-2939cb9526c7"
+        }
+      }
 
-$.ajax({
-    url: queryUrl,
-    method: "GET"
+      $.ajax(settings).done(function (response) { 
+       // $("#class").html("<h1>" + response.response.groups[0].items[0].venue.name + " Weather Details</h1>");
+            
+       console.log(response);
+       
 }).then(function (response) {
+    var results = response.response.groups[0].items;
 
-    var results = response.events;
-    console.log(response)
 
+    // are we actually grabbing anything from our array???
     for (var i = 0; i < results.length; i++) {
 
        var eventDiv = $("<div>");
 
-       eventDiv.addClass("eventDiv card");
+       var p = $("<p>").text(results[i].venue.name);
 
-       var eventDivInfo = $("<div class='card-body'>")
+       eventDiv.append(p);
        
-       var images = response.events.images[i];
 
-       //IMG
-       eventDivInfo.attr("src", images);
-       console.log(images);
-
-       //TIME
-       eventDivInfo.attr("text", response.events.datetime_utc);
- 
-       
-       //EVENT NAME
-       eventDivInfo.attr("text", response.events.venue.name);
-       
-       //LOCATION
-       eventDivInfo.attr("text", response.events.venue.address);
-
-
-       // EVENT INFO IS APPENDED TO OUR INSERTED DIV
-    eventDiv.append(eventDivInfo);
-        console.log(eventDivInfo);
 
 
        $("#restaurantResults").prepend(eventDiv);
