@@ -30,7 +30,7 @@ function displayEvents() {
     var settings = {
         "async": true,
         //"crossDomain": true,
-        "url": "https://api.foursquare.com/v2/venues/explore?near=" + userZipCode + "&oauth_token=OL4R3QGEZHZP0NH4ZA2RZCS034DK2JZIFICQ2WGGLBFTSQXZ&v=20180323&radius=20000&section=food&limit=5&categories=",
+        "url": "https://api.foursquare.com/v2/venues/explore?near=" + userZipCode + "&oauth_token=OL4R3QGEZHZP0NH4ZA2RZCS034DK2JZIFICQ2WGGLBFTSQXZ&v=20180323&radius=20000&section=food&limit=9&categories=",
         "method": "GET",
         'dataType':"jsonp",
         "headers": {
@@ -41,43 +41,36 @@ function displayEvents() {
         }
       }
 
-      $.ajax(settings).done(function (response) { 
-       // $("#class").html("<h1>" + response.response.groups[0].items[0].venue.name + " Weather Details</h1>");
-            
-       console.log(response);
-       
-}).then(function (response) {
-    var results = response.response.groups[0].items;
-
-
+    $.ajax(settings).done(function(response) { 
+       // $("#class").html("<h1>" + response.response.groups[0].items[0].venue.name + " Weather Details</h1>");       
+        //console.log(response);
+    }).then(function (response) {
+        var results = response.response.groups[0].items;
+        console.log(response);
     // are we actually grabbing anything from our array???
-    for (var i = 0; i < results.length; i++) {
+        for (var i = 0; i < results.length; i++) {
+            //var coll = $("<div class='col-md-4'>")
+            var eventDiv = $("<div class='card' style='width: 18rem;'>");
+            var body = $("<div class='card-body'>")
+            var h5 = $("<h5 class='card-title'>").text(results[i].venue.name);
+            var place = $("<p>").text("Address: " + results[i].venue.location.address);
+            var cardT = $("<p>").text("Rating: " + results[i].venue.rating);
+            var link = $("<a>", {
+                text: "To Site",
+                class: 'btn btn-primary',
+                title: 'sometitle',
+                href: results[i].venue.url
+            })
+        eventDiv.append(h5);
+        eventDiv.append(place)
+        eventDiv.append(cardT);
+        eventDiv.append(link);
+        $("#restaurantResults").append(eventDiv)
+        
+        }
+     
 
-       var eventDiv = $("<div>");
-
-       var p = $("<p>").text(results[i].venue.name);
-
-       var f = $("<p>").text(results[i].venue.location.address);
-
-       var d = $("<p>").text("Rating: " + results[i].venue.rating);
-
-       var u = $("<p>").text("Website: " + results[i].venue.url);
-
-       var i = $("<img>");
-       i.attr("src", results[i].venue.id);
-
-
-       eventDiv.append(p);
-       eventDiv.append(f);
-       eventDiv.append(d);
-       eventDiv.append(u);
-
-
-       $("#restaurantResults").prepend(eventDiv);
-
-    }
-
-})
+    })
 $("#restaurantResults").empty();
 
 }
