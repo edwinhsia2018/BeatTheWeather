@@ -5,7 +5,14 @@ h1 {
 
 body, html {
   height: 100%;
-  background-color: rgb(179, 179, 179);
+  background-image: url("../images/grunge-watercolor-background.jpg");
+   /* Full height */
+   height: auto;
+
+   /* Center and scale the image nicely */
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
 }
 
 #whatWeather {

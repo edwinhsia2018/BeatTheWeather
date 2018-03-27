@@ -100,6 +100,7 @@ function displayEvents() {
 
        var h = $("<src>", "href='results[i].venue.url' ").text(results[i].venue.url);
 
+       
        eventDiv.append(p);
        eventDiv.append(f);
        eventDiv.append(d);
