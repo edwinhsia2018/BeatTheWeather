@@ -3,15 +3,14 @@ h1 {
   text-align: center;
 }
 
-
 body, html {
   height: 100%;
+  background-color: rgb(179, 179, 179);
 }
 
 #whatWeather {
   background: rgba(245, 162, 19, 0.756);
 }
-
 
 .bg { 
   /* The image used */
@@ -40,7 +39,6 @@ body, html {
   margin: auto; 
   padding: 26px;
 }
-
 
 #jjjumbotron3 {
   border: 2px solid rgb(255, 255, 255);
