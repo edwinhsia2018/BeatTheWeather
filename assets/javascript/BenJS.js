@@ -88,8 +88,10 @@ function displayEvents() {
             var eventDiv = $("<div class='card mx-auto my-2' style='width: 18rem;'>");
             var body = $("<div class='card-body'>")
             var h5 = $("<h5 class='card-title m-1 text-primary'>").text(results[i].venue.name);
-            var place = $("<p class='m-1'>").text("Address: " + results[i].venue.location.address);
-            var cardT = $("<p class='m-1'>").text("Rating: " + results[i].venue.rating);
+            //var place = $("<p class='m-1'>").text("Address: " + results[i].venue.location.address);
+            var cardT = $("<p class='m-1'>").html("Rating: " + results[i].venue.rating + "<br />"+ 
+                                                "Address: " + results[i].venue.location.address + "<br />" + 
+                                                "Phone: " + results[i].venue.contact.formattedPhone);
             var link = $("<a>", {
                 text: "Visit Website",
                 class: 'btn btn-primary m-1 bg-info',
@@ -97,7 +99,7 @@ function displayEvents() {
                 href: results[i].venue.url
             })
         eventDiv.append(h5);
-        eventDiv.append(place)
+        //eventDiv.append(place)
         eventDiv.append(cardT);
         eventDiv.append(link);
         $("#restaurantResults").append(eventDiv)
