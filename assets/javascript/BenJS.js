@@ -1,8 +1,7 @@
 //NON-EDITED URL
 //var queryUrl = "https://api.seatgeek.com/2/events?type=concert&venue.postal_code=55414&client_id=MTA5NjY3OTR8MTUyMTgxNzkwOS40"
 
-// OUR ZIP CODE ARRAY --- HOLDS OUR INFO
-var zipCode = [];
+
 
 
 
@@ -51,19 +50,11 @@ $(document).on("click", "#ZIPbutton", function(event) {
    
 
     // THE ZIP CODE THE USER ENTERED IS ADDED TO THE userZipCode ARRAY
-    zipCode.push(userZipCode);
+   
  
 
 });
 
-// ======================================
-
-
-
-
-
-
-// ======================================
 
 // FUNCTION THAT DISPLAYS OUR EVENTS WE GRAB
 
@@ -123,11 +114,6 @@ function displayEvents() {
 
 })
 $("#restaurantResults").empty();
-
-
-
-
-
 
 }
 
