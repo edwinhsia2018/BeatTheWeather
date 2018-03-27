@@ -1,8 +1,7 @@
 //NON-EDITED URL
 //var queryUrl = "https://api.seatgeek.com/2/events?type=concert&venue.postal_code=55414&client_id=MTA5NjY3OTR8MTUyMTgxNzkwOS40"
 
-// OUR ZIP CODE ARRAY --- HOLDS OUR INFO
-var zipCode = [];
+
 
 
 
@@ -14,9 +13,45 @@ $(document).on("click", "#ZIPbutton", function(event) {
     // This takes our ZIP CODE INPUT
     var userZipCode = $("#zipCodeForm").val();
 
+    function validateZipCode(userZipCode) {
+
+   
+
+
+        // return true if it's valid
+        // return false if it's not valid
+        for (var i = 0; i < userZipCode.length; i++) {
+            if (isNaN(userZipCode[i])) {
+                console.log (userZipCode)
+                return false;
+            }
+        }
+
+        if (userZipCode.length != 5) {
+            return false;  
+        }
+
+        return true;
+
+   
+    };
+
+    // -------------------------------
+   
+    if (validateZipCode(userZipCode) == false) {
+        $("#myModal").modal();
+        $("#restaurantResults").empty();
+    }
+    else {
+        displayEvents()
+    }
+    
+//==================================
+   
+
     // THE ZIP CODE THE USER ENTERED IS ADDED TO THE userZipCode ARRAY
-    zipCode.push(userZipCode);
-    displayEvents()
+   
+ 
 
 });
 
@@ -63,19 +98,19 @@ function displayEvents() {
 
        var u = $("<p>").text("Website: " + results[i].venue.url);
 
-       var i = $("<img>");
-       i.attr("src", results[i].venue.id);
-
+       var h = $("<src>", "href='results[i].venue.url' ").text(results[i].venue.url);
 
        eventDiv.append(p);
        eventDiv.append(f);
        eventDiv.append(d);
        eventDiv.append(u);
-
+       eventDiv.append(h);
 
        $("#restaurantResults").prepend(eventDiv);
 
     }
+
+
 
 })
 $("#restaurantResults").empty();
