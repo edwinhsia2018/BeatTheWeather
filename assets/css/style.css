@@ -84,4 +84,9 @@ body, html {
 #events-header {
   background: rgba(245, 162, 19, 0.756);
   color: white;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+#restaurantResults {
+  border: 2px solid rgb(255, 255, 255);
 }
