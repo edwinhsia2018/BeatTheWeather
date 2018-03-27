@@ -85,14 +85,14 @@ function displayEvents() {
     // are we actually grabbing anything from our array???
         for (var i = 0; i < results.length; i++) {
             //var coll = $("<div class='col-md-4'>")
-            var eventDiv = $("<div class='card' style='width: 18rem;'>");
+            var eventDiv = $("<div class='card mx-auto my-2' style='width: 18rem;'>");
             var body = $("<div class='card-body'>")
-            var h5 = $("<h5 class='card-title'>").text(results[i].venue.name);
-            var place = $("<p>").text("Address: " + results[i].venue.location.address);
-            var cardT = $("<p>").text("Rating: " + results[i].venue.rating);
+            var h5 = $("<h5 class='card-title m-1 text-primary'>").text(results[i].venue.name);
+            var place = $("<p class='m-1'>").text("Address: " + results[i].venue.location.address);
+            var cardT = $("<p class='m-1'>").text("Rating: " + results[i].venue.rating);
             var link = $("<a>", {
-                text: "To Site",
-                class: 'btn btn-primary',
+                text: "Visit Website",
+                class: 'btn btn-primary m-1 bg-info',
                 title: 'sometitle',
                 href: results[i].venue.url
             })
